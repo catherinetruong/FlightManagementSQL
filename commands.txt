@@ -1,0 +1,27 @@
+scp -r '/Users/cathyytruong/Downloads/cs166_project_phase3' ctruo042@cs166.cs.ucr.edu:~
+
+ssh ctruo042@cs166.cs.ucr.edu
+
+cd cs166_project_phase3/java/src
+
+cd java/src
+
+cd cs166_project_phase3/sql/scripts
+
+cs166_db_start
+
+javac AirlineManagement.java
+
+java -cp .:/usr/share/java/postgresql.jar AirlineManagement ctruo042_project_db 21361 ctruo042
+
+cs166_psql -p 21361 ctruo042_project_db
+
+cd cs166_project_phase3/java/src
+
+cs166_db_stop
+
+cd ~/cs166_project_phase3
+
+./sql/scripts/create_db.sh
+
+vim AirlineManagement.java
